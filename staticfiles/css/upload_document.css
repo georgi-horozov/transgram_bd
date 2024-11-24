@@ -1,0 +1,66 @@
+/*!* Стилове за страницата за създаване на документ *!*/
+/*.document-create-container {*/
+/*    max-width: 500px;*/
+/*    margin: 25px auto; !* Центрира контейнера с отстояние отгоре и отдолу *!*/
+/*    padding: 20px;*/
+/*    background-color: #badff8;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); !* По-силен ефект за по-добра видимост *!*/
+/*}*/
+
+.document-create-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8em; /* Малко по-голям размер за заглавието */
+}
+
+/* Оформление на формата */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb; /* По-мек цвят за рамката */
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Плавен преход на рамката при фокус */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="file"]:focus {
+    border-color: #007bff; /* Акцентиран цвят на фокуса */
+    outline: none;
+}
+
+/* Стилове за бутона */
+.submit-button {
+    display: block;
+    width: 40%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавен преход за ховър ефекта */
+    margin: 0 auto;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+

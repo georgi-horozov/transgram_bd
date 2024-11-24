@@ -1,0 +1,95 @@
+/* Контейнер за секцията за изтриване на профила */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden; /* Изключване на скрол лентата за целия документ */
+}
+
+.auth {
+    display: flex;
+    justify-content: center; /* Центриране по хоризонтала */
+    align-items: center; /* Центриране по вертикала */
+    height: 100vh; /* Височината да бъде точно 100% от прозореца */
+    background-color: #f7f7f7;
+    padding: 0; /* Премахване на padding, за да няма допълнителна височина */
+    box-sizing: border-box; /* Гарантира, че височината включва рамките и padding */
+    overflow: hidden; /* Премахване на скрол лентата, ако остава допълнително съдържание */
+}
+
+.container {
+    background-color: white;
+    padding: 10px; /* Вътрешно разстояние в контейнера */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    max-height: calc(100vh - 40px); /* Ограничаване на височината до 100% от прозореца, минус малко пространство */
+    overflow-y: auto; /* Скрол вътре в контейнера само ако съдържанието го изисква */
+    box-sizing: border-box; /* Включване на padding в размера */
+}
+
+
+/* Заглавие */
+h1 {
+    font-size: 24px; /* Намален размер на шрифта */
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0; /* Намален маржин */
+}
+
+/* Бутон за потвърждение на изтриването */
+.btn.submit {
+    background-color: #d9534f; /* Червен за потвърждение на изтриването */
+    color: white;
+    padding: 6px 12px; /* Намален padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.submit:hover {
+    background-color: #c9302c;
+}
+
+/*!* Бутони за връщане назад *!*/
+/*.sure-buttons {*/
+/*    margin-top: 15px; !* Намален маргин *!*/
+/*}*/
+
+.back-delete-btn {
+    background: #a9a8a3;
+    color: white;
+    padding: 6px 12px; /* Padding за създаване на "бутон" */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Премахва подчертаването на линка */
+    font-size: 14px;
+    display: inline-block; /* Прави линка да се държи като бутон */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-delete:hover {
+    background-color: #333; /* По-светъл нюанс на черното при задържане */
+    color: white; /* Запазва текста бял при задържане */
+}
+
+/* Стилове за изображението */
+img {
+    width: 100%;
+    max-width: 350px; /* Намален размер на изображението */
+    margin-top: 20px; /* Намален маргин */
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Скриване на CSRF токен, ако е необходимо */
+form input[name="csrfmiddlewaretoken"] {
+    display: none;
+}
+

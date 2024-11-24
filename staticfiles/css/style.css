@@ -1,0 +1,197 @@
+/* Задаване на border-box за всички елементи */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Премахване на излишните марджини и падинги */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100%;   /* Задава минимална височина за цялата страница */
+}
+
+/* Основни стилове за страницата */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    min-height: 100vh; /* Минимална височина на екрана */
+    padding-top: 50px;      /* Добавяне на място под хедъра (според височината на хедъра) */
+    padding-bottom: 50px;   /* Добавяне на място над футъра (според височината на футъра) */
+    box-sizing: border-box; /* Включване на падинга в размера на body */
+}
+
+/* Стилизация на header */
+header {
+    position: fixed;       /* Фиксиране на хедъра */
+    top: 0;                /* Разположение в горната част на страницата */
+    left: 0;               /* Започва от лявата страна */
+    width: 100%;           /* Ширина 100% от екрана */
+    max-width: 100vw;      /* Гарантира, че хедърът няма да надвиши ширината на екрана */
+    box-sizing: border-box; /* Включва вътрешните отстъпи в размера на хедъра */
+    background-color: #333; /* Цвят на фона */
+    color: #fff;            /* Цвят на текста */
+    padding: 5px 20px;     /* Разстояние около елементите в хедъра */
+    font-size: 1rem;        /* Размер на шрифта */
+    z-index: 1000;          /* Поставя хедъра над останалото съдържание */
+    display: flex;          /* Използваме flexbox */
+    justify-content: space-between; /* За да разположим елементите по краищата */
+    align-items: center;    /* Центриране по вертикала */
+}
+
+/* Лого */
+header .logo {
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-left: 0; /* Премахва допълнителен ляв отстъп */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+
+nav {
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:last-child {
+    margin-right: 0;
+}
+
+nav a:hover {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+}
+
+/* Footer стилове */
+footer {
+    position: fixed;      /* Фиксиране на футера */
+    bottom: 0;            /* Разположение в долната част на страницата */
+    left: 0;              /* Започва от лявата страна */
+    width: 100%;          /* Задайте ширината на 100% от екрана */
+    max-width: 100vw;     /* Гарантирайте, че футерът не надвишава ширината на екрана */
+    box-sizing: border-box; /* Включете вътрешните отстъпи в размера на футера */
+    background-color: #333; /* Цвят на фона на футера */
+    color: #fff;           /* Цвят на текста */
+    text-align: center;    /* Центриране на текста */
+    padding: 10px 0;       /* Разстояние около текста */
+    font-size: 1rem;       /* Размер на шрифта */
+    z-index: 1000;         /* Поставяне на футера над останалото съдържание */
+}
+
+/* Адаптивен дизайн */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
+
+/* Контейнер за login и register, който да заема наличното пространство */
+.login-register-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Центрира вертикално */
+    flex-grow: 1; /* Заема цялото останало място между header и footer */
+    width: 100%;
+    padding: 100px; /* Допълнителен padding за разстояние от header и footer */
+}
+
+/* Стилизиране на кутията за login и register */
+.login-register-box {
+    background-color: #BADFF8FF;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Стилове за текста и полетата */
+.login-register-box h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.login-register-box input[type="text"],
+.login-register-box input[type="password"],
+.login-register-box input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* Бутоните за вход и регистрация */
+.button-container {
+    margin-top: 20px;
+}
+
+.login-button, .register-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover, .register-button:hover {
+    background-color: #0056b3;
+}
+
+.second-option {
+    margin-top: 20px;
+    color: #666666;
+    text-align: center;
+}
+
+.second-option a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.second-option a:hover {
+    text-decoration: underline;
+}
+
+
+

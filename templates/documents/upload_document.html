@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main_content %}
+<style>
+    body {
+        background-image: url("{% static 'images/invoice_cmr.jpg' %}");
+        background-size: cover; /* Изображението ще покрива целия екран */
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh; /* Задаваме височина за целия екран */
+        margin: 0; /* Премахваме външните отстояния */
+        display: flex; /* Използваме Flexbox за центриране */
+        justify-content: center; /* Центрираме по хоризонтала */
+        align-items: center; /* Центрираме по вертикала */
+    }
+
+    .document-create-container {
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.8); /* Прозрачен бял фон за контейнера с формата */
+        max-width: 800px;
+        width: 110%; /* Правим контейнера адаптивен */
+        box-sizing: border-box; /* За да вземе предвид padding-а */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .submit-button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .submit-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="document-create-container">
+    <h2>Upload documents</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="reference">Reference Number</label>
+            {{ form.reference }}
+        </div>
+
+        <div class="form-group">
+            <label for="invoice">Invoice</label>
+            {{ form.invoice }}
+        </div>
+
+        <div class="form-group">
+            <label for="cmr">CMR</label>
+            {{ form.cmr }}
+        </div>
+
+        <div class="form-group">
+            <label for="additional_document">Additional Document</label>
+            {{ form.additional_document }}
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+

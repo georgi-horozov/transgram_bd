@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+<link rel="stylesheet" href="{% static 'css/profile_details.css' %}">
+
+<div class="info-section">
+<h1>Profile Details</h1>
+    <div class="profile-photo">
+        {% if profile.profile_photo %}
+            <img class="car-img" src="{{ profile.profile_photo.url }}" alt="Profile Image" />
+        {% else %}
+            <img class="car-img" src="{% static 'images/default_profile_image.png' %}" alt="Default Profile Image" />
+        {% endif %}
+    </div>
+
+    <!-- Email -->
+    <p class="description">Email: {{ profile.user.email }}</p>
+
+    <!-- Profile Data -->
+    <p class="description">Company Name: {{ profile.company_name }}</p>
+    <p class="description">VAT: {{ profile.vat }}</p>
+    <p class="description">Address: {{ profile.address }}</p>
+    <p class="description">Phone Number: {{ profile.phone_number }}</p>
+
+    <!-- Action Buttons -->
+    <div class="buttons">
+        <a href="{% url 'profile_update' pk=object.pk %}" class="edit-button">Edit</a>
+        <a href="{% url 'profile_delete' pk=object.pk %}" class="delete-button">Delete</a>
+    </div>
+</div>
+
+<!-- Optional Form for Additional Actions -->
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
+
+{% endblock %}

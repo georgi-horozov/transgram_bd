@@ -1,0 +1,129 @@
+/* General styles for the form container */
+form {
+    max-width: 550px;  /* Увеличена ширина на формата */
+    margin: 0 auto;    /* Центриране на формата */
+    padding: 10px;      /* Намален падинг */
+    background-color: #f9f9f9; /* Лек фон за формата */
+    border-radius: 8px; /* Заоблени ъгли */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* По-слаб сянка */
+    /*margin-bottom: 65px;  !* Разстояние под формата за да се измести футера надолу *!*/
+    /*margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
+}
+
+form {
+    margin-top: 5vh;   /* Разстояние отгоре (20% от височината на екрана) */
+    margin-bottom: 5vh; /* Разстояние отдолу (20% от височината на екрана) */
+}
+
+/* Heading style */
+h1 {
+    text-align: center;
+    font-size: 1.4rem;  /* Намален размер на заглавието */
+    color: #333;
+    margin-bottom: 8px; /* Намалено разстояние под заглавието */
+}
+
+/* Style for the input fields and textareas */
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;        /* Пълна ширина на полето */
+    padding: 4px;       /* Намален падинг вътре в полетата */
+    margin: 4px 0;      /* Намалено разстояние между полетата */
+    border: 1px solid #ccc; /* Светло сиво за границата */
+    border-radius: 4px;  /* Заоблени ъгли за полетата */
+    font-size: 0.95rem;  /* По-малък размер на шрифта */
+    box-sizing: border-box; /* Включва падинга в размера на полето */
+}
+
+/* Намален размер и падинг на бутона */
+input[type="submit"], button[type="submit"] {
+    background-color: #4CAF50; /* Зелен цвят на бутона */
+    color: white;             /* Бял текст */
+    border: none;             /* Без граница */
+    padding: 4px 8px;         /* Намален падинг на бутона */
+    border-radius: 4px;       /* Заоблени ъгли на бутона */
+    font-size: 0.95rem;       /* По-малък шрифт */
+    cursor: pointer;         /* Курсор на ръка */
+    transition: background-color 0.3s ease; /* Плавно преминаване при ховър */
+}
+
+/* Hover ефект за бутона */
+input[type="submit"]:hover, button[type="submit"]:hover {
+    background-color: #45a049; /* По-тъмен зелен цвят при ховър */
+}
+
+/* Стилове за съобщенията за успех и грешки */
+.messages {
+    margin: 20px auto;         /* Центрирано съобщение */
+    padding: 6px;              /* Намален падинг */
+    border-radius: 4px;         /* Заоблени ъгли */
+    font-size: 0.9rem;         /* По-малък размер на шрифта за съобщенията */
+    max-width: 550px;          /* Ограничена ширина на съобщенията */
+    text-align: center;        /* Центриран текст */
+}
+
+/* Съобщение за успех (светло зелено) */
+.alert-success {
+    background-color: #d4edda; /* Светло зелена фон */
+    color: #155724;            /* Тъмен зелен текст */
+    border: 1px solid #c3e6cb; /* Зелена граница */
+}
+
+/* Съобщение за грешка (светло червено) */
+.alert-danger {
+    background-color: #f8d7da; /* Светло червен фон */
+    color: #721c24;            /* Тъмен червен текст */
+    border: 1px solid #f5c6cb; /* Червена граница */
+}
+
+/* Стилове за по-ефективно разположение на полетата */
+form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;  /* Намалено разстояние между полетата */
+}
+
+/*!* Fixing the footer at the bottom of the page *!*/
+/*footer {*/
+/*    position: fixed;      !* Фиксиране на футера *!*/
+/*    bottom: 0;            !* Разположение в долната част на страницата *!*/
+/*    left: 0;              !* Започва от лявата страна *!*/
+/*    width: 100%;          !* Задайте ширината на 100% от екрана *!*/
+/*    max-width: 100vw;     !* Гарантирайте, че футерът не надвишава ширината на екрана *!*/
+/*    box-sizing: border-box; !* Включете вътрешните отстъпи в размера на футера *!*/
+/*    background-color: #333; !* Цвят на фона на футера *!*/
+/*    color: #fff;           !* Цвят на текста *!*/
+/*    text-align: center;    !* Центриране на текста *!*/
+/*    padding: 10px 0;       !* Разстояние около текста *!*/
+/*    font-size: 1rem;       !* Размер на шрифта *!*/
+/*    z-index: 1000;         !* Поставяне на футера над останалото съдържание *!*/
+/*}*/
+
+
+/* Гарантиране, че основния контейнер (body или друг контейнер) има същата ширина */
+body, .container, .main-content {
+    max-width: 100%;      /* Уверете се, че основният контейнер заема 100% от ширината */
+    width: 100%;          /* Задайте ширината на 100% */
+    box-sizing: border-box; /* Включете падингите в размера на контейнера */
+    margin: 0;            /* Избягвайте неволни външни отстъпи */
+}
+
+/* Responsive дизайн за малки екрани */
+@media screen and (max-width: 768px) {
+    form {
+        width: 90%;  /* По-малка ширина на формата за мобилни устройства */
+    }
+
+    h1 {
+        font-size: 1.2rem; /* По-малко заглавие на малки екрани */
+    }
+
+    .messages {
+        font-size: 0.85rem; /* По-малък размер на шрифта за съобщенията на мобил */
+    }
+}
+
+
+
+
+

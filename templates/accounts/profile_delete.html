@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+<link rel="stylesheet" href="{% static 'css/profile_delete.css' %}">
+
+<section id="delete-profile" class="auth">
+    <div class="container">
+        <h1>Are you sure you want to delete your profile?</h1>
+
+        <!-- Общо изображение без конкретика -->
+        <img src="{% static 'images/delete_profile.jpeg' %}" alt="Are you sure?">
+
+        <!-- Контейнер за формата и бутоните -->
+        <div class="sure-buttons">
+            <form action="{% url 'profile_delete' pk=object.pk %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <input class="btn submit" type="submit" value="Yes">
+            </form>
+            <a class="back-delete-btn" href="javascript:history.back()">Go Back</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

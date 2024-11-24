@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/create_message.css' %}">
+
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+
+        <form method="post">
+        <h1>Contact Us</h1>
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit">Send</button>
+        </form>
+    {% endif %}
+
+{% endblock %}
+
+

@@ -1,0 +1,111 @@
+/* profile_update.css */
+
+/* Основни стилове за цялата страница */
+/*html, body {*/
+/*    height: 100%;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*!* Центриране на съдържанието с отстояние от header и footer *!*/
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f0f0f0;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    padding-top: 20px; !* Отстояние от хедъра *!*/
+/*    padding-bottom: 20px; !* Отстояние от футъра *!*/
+/*}*/
+
+/* Контейнер за формата за редактиране */
+.edit-delete {
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    max-height: 80vh; /* Ограничаване на височината на контейнера */
+    overflow-y: auto;
+    margin: 20px auto; /* Центриране и отстояние от header и footer */
+}
+
+/* Заглавие на секцията */
+.edit-delete h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Стилове за формата */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Полета във формата */
+form p {
+    font-size: 16px;
+    color: #666;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Бутон за редактиране */
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Стил за бутона за връщане назад */
+.back-btn {
+    background-color: #a9a8a3;
+    color: white; /* Белият текст */
+    padding: 6px 12px; /* Padding за създаване на "бутон" */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Премахва подчертаването на линка */
+    font-size: 14px;
+    display: inline-block; /* Прави линка да се държи като бутон */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+.back-btn:hover {
+    background-color: #333; /* По-светъл нюанс на черното при задържане */
+    color: white; /* Запазва текста бял при задържане */
+}
+
+
+
+/* Скриване на CSRF токена */
+form input[name="csrfmiddlewaretoken"] {
+    display: none;
+}
+

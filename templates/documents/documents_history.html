@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+    <link rel="stylesheet" href="{% static 'css/documents_history.css' %}">
+    <h1>Your Documents History</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Reference</th>
+            <th>Invoice</th>
+            <th>CMR</th>
+            <th>Additional Document</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for document in documents %}
+        <tr>
+            <td>{{ document.reference }}</td>
+            <td>
+                {% if document.invoice %}
+                <a href="{{ document.invoice.url }}" download>Download Invoice</a>
+                {% else %}
+                No file
+                {% endif %}
+            </td>
+            <td>
+                {% if document.cmr %}
+                <a href="{{ document.cmr.url }}" download>Download CMR</a>
+                {% else %}
+                No file
+                {% endif %}
+            </td>
+            <td>
+                {% if document.additional_document %}
+                <a href="{{ document.additional_document.url }}" download>Download Additional Document</a>
+                {% else %}
+                No file
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
